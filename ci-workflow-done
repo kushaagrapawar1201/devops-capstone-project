@@ -1,0 +1,74 @@
+Run actions/checkout@v3
+  Syncing repository: kushaagrapawar1201/devops-capstone-project
+  Getting Git version info
+  Copying '/home/runner/work/_actions/actions/checkout/v3/.github' to '/home/runner/work/_actions/actions/checkout/v3/dist'
+  Temporarily overriding HOME='...' to run git
+  Executing the git command: git clone --depth=1 --single-branch --branch main https://github.com/kushaagrapawar1201/devops-capstone-project /home/runner/work/devops-capstone-project/devops-capstone-project
+  Fetching the repository
+  Checking out the ref
+Run actions/setup-python@v4
+  Installed versions
+  Version 3.9.18 was not found in the cache.
+  Downloading and setting up Python 3.9...
+  Successfully set up Python 3.9
+Run python -m pip install --upgrade pip
+  Requirement already satisfied: pip in /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/site-packages (23.2.1)
+  Collecting pip
+    Downloading pip-23.3.1-py3-none-any.whl (2.1 MB)
+  Installing collected packages: pip
+  Successfully installed pip-23.3.1
+  Installing dependencies from requirements.txt
+  Successfully installed Flask-2.1.2 Flask-Cors-3.0.10 Flask-SQLAlchemy-2.5.1 Flask-Talisman-1.0.0 SQLAlchemy-1.4.46 Werkzeug-2.1.2 black-22.3.0 coverage-6.3.2 factory-boy-2.12.0 flake8-4.0.1 gunicorn-20.1.0 honcho-1.1.0 httpie-3.2.1 nose-1.3.7 pinocchio-0.4.3 psycopg2-binary-2.9.3 pylint-2.14.0 python-dotenv-0.20.0
+Run flake8 service tests --count --select=E9,F63,F7,F82 --show-source --statistics
+0
+0
+Run flake8 service tests --count --max-complexity=10 --max-line-length=127 --statistics
+0
+Run nosetests -v --with-spec --spec-color
+Test Flask CLI Commands
+- It should call the db-create command
+
+Test Cases for Account Model
+- It should Create an account and add it to the database
+- It should Create an Account and assert that it exists
+- It should Delete an account from the database
+- It should Deserialize an account
+- It should not Deserialize an account with a KeyError
+- It should not Deserialize an account with a TypeError
+- It should Find an Account by name
+- It should List all Accounts in the database
+- It should Read an account
+- It should Serialize an account
+- It should Update an account
+
+Account Service Tests
+- It should not Create an Account when sending the wrong data
+- It should Create a new Account
+- It should Delete an Account
+- It should Read a single Account
+- It should not Read an Account that is not found
+- It should Get a list of Accounts
+- It should get 200_OK from the Home Page
+- It should be healthy
+- It should not allow an illegal method call
+- It should not Create an Account when sending the wrong media type
+- It should Update an existing Account
+- It should not Update an Account that is not found
+- It should return security headers
+- It should return a CORS header
+
+Name                          Stmts   Miss  Cover   Missing
+-----------------------------------------------------------
+service/__init__.py              22      0   100%
+service/common/cli_commands.py    7      0   100%
+service/common/error_handlers.py 33      1    97%   40
+service/common/log_handlers.py   11      0   100%
+service/common/status.py         46      0   100%
+service/config.py                 7      0   100%
+service/models.py                58      0   100%
+service/routes.py                54      0   100%
+-----------------------------------------------------------
+TOTAL                           238      1    99%
+
+======================================================================
+26 tests run in 1.458s. All passed (0 errors, 0 failures).
